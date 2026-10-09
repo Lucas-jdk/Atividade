@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestres do Conhecimento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Cabeçalho de Status -->
+        <div class="header">
+            <div class="player-info">
+                <div class="name-tag">
+                    <span id="player-name">LÚCIA, A EXPLORADORA</span>
+                    <span class="level-badge" id="player-level">NV. 1</span>
+                </div>
+                <div class="stat-bar">
+                    <span class="bar-label">HP</span>
+                    <div class="bar bar-hp">
+                        <div id="hp-fill" style="width: 100%;"></div>
+                    </div>
+                    <span class="bar-text" id="hp-text">100 / 100</span>
+                </div>
+                <div class="stat-bar">
+                    <span class="bar-label">EXP</span>
+                    <div class="bar bar-exp">
+                        <div id="exp-fill" style="width: 0%;"></div>
+                    </div>
+                    <span class="bar-text" id="exp-text">0 / 500</span>
+                </div>
+            </div>
+
+            <div class="game-title">
+                <h1>MESTRES DO CONHECIMENTO</h1>
+                <p id="current-stage">Carregando fase...</p>
+            </div>
+
+            <div class="score-box">
+                <span id="multiplier">🟡 1.0x</span>
+            </div>
+        </div>
+
+        <!-- Arena de Batalha (Troca de imagem de fundo dinâmica) -->
+        <div class="arena" id="arena-bg">
+            <!-- Lado Esquerdo: Herói -->
+            <div class="character-box hero-box">
+               <img id="hero-img" src="https://api.dicebear.com/7.x/bottts/svg?seed=Heroi" alt="Herói">
+                <div class="class-tag" id="class-tag">CLASSE</div>
+            </div>
+
+            <!-- Centro: Versus -->
+            <div class="vs-badge">VS</div>
+
+            <!-- Lado Direito: Chefe -->
+            <div class="character-box monster-box">
+                <img id="monster-img" src="https://api.dicebear.com/7.x/bottts/svg?seed=Chefe" alt="Chefe">
+                <div class="monster-tag" id="monster-tag">CHEFE</div>
+            </div>
+        </div>
+
+        <!-- Painel do Quiz -->
+        <div class="quiz-box">
+            <div class="monster-header">
+                <h3 id="monster-name">GUARDIÃO</h3>
+                <p>DERROTE O CHEFE ACERTANDO A PERGUNTA!</p>
+            </div>
+
+            <div class="question-header">
+                <span class="tag-question" id="subject-tag">MATÉRIA</span>
+                <span class="tag-exp" id="exp-reward">+0 EXP</span>
+                <h2 id="question-text">Carregando pergunta...</h2>
+            </div>
+
+            <!-- Opções geradas dinamicamente via JS -->
+            <div class="options-grid" id="options-container"></div>
+
+            <div class="footer-controls">
+                <div class="timer" id="timer">⏱️ 00:30</div>
+                <div class="helpers">
+                    <button onclick="useHelper('dica')">💡 DICA X2</button>
+                    <button onclick="useHelper('pular')">🦘 PULAR X1</button>
+                    <button onclick="useHelper('fifty')">📊 50/50 X1</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
